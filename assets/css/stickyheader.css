@@ -23,5 +23,5 @@ header {
 
 @font-face {
     font-family: 'nunito'; /*a name to be used later*/
-    src: url('assets/fonts/Nunito/Nunito-VariableFont_wght.ttf'); /*URL to font*/
+    src: url('../fonts/Nunito/Nunito-VariableFont_wght.ttf'); /*URL to font*/
 }
