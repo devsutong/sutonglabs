@@ -1,0 +1,27 @@
+.top-container {
+    background-color: antiquewhite;
+    padding: 30px;
+    text-align: center;
+    
+}
+
+header {
+    padding: 10px 16px;
+    background-color: aliceblue;
+    text-align: center;
+    font-family: 'nunito';
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 102px;
+}
+
+@font-face {
+    font-family: 'nunito'; /*a name to be used later*/
+    src: url('assets/fonts/Nunito/Nunito-VariableFont_wght.ttf'); /*URL to font*/
+}
