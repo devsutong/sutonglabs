@@ -2,6 +2,8 @@
     background-color: antiquewhite;
     padding: 30px;
     text-align: center;
+    font-family: 'Comforter';
+    letter-spacing: 10px;
     
 }
 
@@ -9,7 +11,7 @@ header {
     padding: 10px 16px;
     background-color: aliceblue;
     text-align: center;
-    font-family: 'nunito';
+    font-family: 'Nunito';
 }
 .sticky {
     position: fixed;
@@ -21,7 +23,12 @@ header {
     padding-top: 102px;
 }
 
-@font-face {
-    font-family: 'nunito'; /*a name to be used later*/
-    src: url('../fonts/Nunito/Nunito-VariableFont_wght.ttf'); /*URL to font*/
+body {
+    font-family: 'Nunito';
+}
+#subtop {
+    font-family: 'Nunito';
+    letter-spacing: normal;
+    font-size: x-small;
+    font-style: italic;
 }
