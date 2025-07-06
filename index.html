@@ -3,238 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Student Portfolio</title>
+    <title>Sutong Labs | Engineering the Future</title>
     <style>
-        /* General Body Styles */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #00f2fe; /* A vibrant, futuristic cyan */
+            --secondary-color: #9d38ff; /* A deep violet for accents */
+            --dark-bg: #0a0a14; /* A very dark, near-black blue */
+            --glass-bg: rgba(20, 20, 30, 0.6);
+            --text-color: #e0e0e0;
+            --heading-color: #ffffff;
         }
 
-        /* Container for centering content */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+            background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+            background-attachment: fixed;
+        }
+
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
-            overflow: hidden;
             padding: 20px 0;
         }
 
-        /* Header and Navigation */
+        /* --- Header & Navigation --- */
         header {
-            background: #fff;
-            color: #333;
-            padding: 1rem 0;
-            border-bottom: 1px solid #ddd;
+            background: rgba(10, 10, 20, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 1rem 0;
         }
-
+        
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--heading-color);
+            text-decoration: none;
         }
 
-        header nav ul {
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
 
-        header nav ul li {
-            display: inline;
-            margin-left: 20px;
+        nav ul li {
+            display: inline-block;
+            margin-left: 30px;
         }
 
-        header nav ul li a {
-            color: #333;
+        nav ul li a {
+            color: var(--text-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        header nav ul li a:hover {
-            color: #5b6cff;
+        nav ul li a:hover, .nav-cta:hover {
+            color: var(--primary-color);
         }
 
-        /* Hero Section */
+        .nav-cta {
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-cta:hover {
+            background-color: var(--secondary-color);
+            color: var(--heading-color) !important;
+        }
+
+        /* --- Hero Section --- */
         #hero {
-            background: #5b6cff;
-            color: #fff;
-            padding: 100px 0;
+            padding: 120px 0;
+            text-align: center;
+            background: linear-gradient(rgba(10, 10, 20, 0.8), rgba(10, 10, 20, 0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600') center/cover no-repeat;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        #hero h1 .highlight {
+            background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- Pillars Section --- */
+        .pillars-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--heading-color);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
 
-        #hero h2 {
-            font-size: 3rem;
-            margin: 0 0 10px 0;
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
         }
 
-        #hero p {
-            font-size: 1.2rem;
+        .pillar-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #fff;
-            color: #5b6cff;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
+        .pillar-card h3 {
+            font-size: 1.8rem;
+            color: var(--heading-color);
+            margin-bottom: 15px;
         }
-
-        .cta-button:hover {
-            background-color: #f0f2ff;
+        
+        /* --- Showcase Section (for products) --- */
+        #showcase {
+            background-color: #0f0f1a;
+            padding: 80px 0;
         }
-
-        /* Section Styling */
-        section {
-            padding: 60px 0;
-        }
-
-        section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
-
-        /* About Me Section */
-        #about .container {
+        
+        .product-card {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
+            margin-bottom: 60px;
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        #about img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 3px solid #5b6cff;
+        .product-card:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        /* Projects Section */
-        #projects .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .product-image {
+            flex: 1;
         }
-
-        .project-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .project-card img {
+        .product-image img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .project-card-content {
-            padding: 20px;
+        .product-info {
+            flex: 1;
+        }
+        
+        .product-info h3 {
+            font-size: 2rem;
+            color: var(--heading-color);
         }
 
-        .project-card h3 {
-            margin-top: 0;
-            color: #5b6cff;
+        .product-info .status {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--heading-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
-
-        .project-card a {
-            color: #5b6cff;
+        
+        .product-info a {
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
-            margin-right: 10px;
         }
 
-        /* Contact Section */
-        #contact form {
-            max-width: 600px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        #contact input, #contact textarea {
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        #contact button {
-            background: #5b6cff;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #contact button:hover {
-            background: #4a5ad9;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: #fff;
+        /* --- Contact/CTA Section --- */
+        #contact {
             text-align: center;
-            padding: 20px 0;
+            padding: 100px 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        }
+        #contact h2 {
+            font-size: 2.5rem;
+            color: var(--dark-bg);
+            margin-bottom: 20px;
+        }
+        #contact p {
+            color: var(--dark-bg);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .contact-button {
+            background: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .contact-button:hover {
+            background: #fff;
+            color: var(--secondary-color);
+            transform: scale(1.05);
         }
 
-        .social-links a {
-            color: #fff;
-            margin: 0 10px;
+        /* --- Footer --- */
+        footer {
+            background: #05050d;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--heading-color);
             text-decoration: none;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .footer-links li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        .social-icons a {
+            color: var(--text-color);
+            margin: 0 10px;
             font-size: 24px;
         }
 
-        /* Responsive Design */
         @media(max-width: 768px) {
-            header .container, #about .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            header nav ul {
-                margin-top: 10px;
-            }
-
-            header nav ul li {
-                margin: 0 10px;
-            }
-
-            #about .container {
-                gap: 20px;
-            }
+            #hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Add a mobile menu button if needed */
+            .product-card, .product-card:nth-child(even) { flex-direction: column; }
         }
     </style>
 </head>
@@ -242,92 +305,104 @@
 
     <header>
         <div class="container">
-            <h1>Your Name</h1>
+            <a href="#" class="logo">Sutong<span>Labs</span></a>
             <nav>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#showcase">Products</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
         </div>
     </header>
 
     <section id="hero">
         <div class="container">
-            <h2>Creative & Innovative Student</h2>
-            <p>Passionate about developing amazing web applications and learning new technologies.</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <h1>We Don't Just Write Code. <br> We <span class="highlight">Engineer the Future</span>.</h1>
+            <p>Sutong Labs is a new-age technology firm where elite software development, ambitious product innovation, and pioneering research converge.</p>
+            <a href="#services" class="nav-cta" style="background-color: var(--primary-color); color: var(--dark-bg); padding: 15px 30px;">Explore Our Work</a>
         </div>
     </section>
-
-    <section id="about">
+    
+    <section id="services" class="pillars-section">
         <div class="container">
-            <img src="https://via.placeholder.com/150" alt="Your Profile Picture">
-            <div>
-                <h2>About Me</h2>
-                <p>I am a dedicated and enthusiastic student currently pursuing a degree in [Your Degree, e.g., Computer Science] at [Your University]. I have a strong foundation in software development and a keen interest in UI/UX design. I enjoy solving complex problems and am always eager to learn and apply new skills in a collaborative environment. In my free time, I enjoy [Your Hobby, e.g., hiking, reading, or contributing to open-source projects].</p>
+            <h2 class="section-title">Our Core Disciplines</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h3>Client Services</h3>
+                    <p>We provide end-to-end software development services, turning your complex challenges into scalable, high-performance digital solutions. From enterprise platforms to mobile apps, we are your dedicated technology partner.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🚀</div>
+                    <h3>Product Innovation</h3>
+                    <p>We are a startup factory. Our internal labs are constantly buzzing, building and launching our own products that aim to disrupt markets and create new possibilities. We are not just service providers; we are creators.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🔬</div>
+                    <h3>Computer Science Research</h3>
+                    <p>Innovation is fueled by knowledge. We are actively engaged in computer science research, exploring frontiers in AI, blockchain, and quantum computing to stay ahead of the curve and contribute to the global tech ecosystem.</p>
+                </div>
             </div>
         </div>
     </section>
-
-    <section id="projects">
+    
+    <section id="showcase">
         <div class="container">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x200" alt="Project 1 Screenshot">
-                    <div class="project-card-content">
-                        <h3>Project Title One</h3>
-                        <p>A brief description of the project. What problem does it solve? What technologies were used? For example: A web application for managing personal tasks, built with React and Firebase.</p>
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Source Code</a>
-                    </div>
+            <h2 class="section-title">From Our Labs</h2>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600" alt="Project Inara Analytics Dashboard">
                 </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x200" alt="Project 2 Screenshot">
-                    <div class="project-card-content">
-                        <h3>Project Title Two</h3>
-                        <p>A brief description of the project. What problem does it solve? What technologies were used? For example: A data visualization dashboard using D3.js to display economic trends.</p>
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Source Code</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="https://via.placeholder.com/400x200" alt="Project 3 Screenshot">
-                    <div class="project-card-content">
-                        <h3>Project Title Three</h3>
-                        <p>A brief description of the project. What problem does it solve? What technologies were used? For example: A mobile-friendly e-commerce site prototype designed with Figma and built with HTML/CSS and JavaScript.</p>
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Source Code</a>
-                    </div>
+                <div class="product-info">
+                    <span class="status">NOW LIVE</span>
+                    <h3>Project Inara: AI Analytics</h3>
+                    <p>An intelligent, self-learning analytics platform that provides predictive insights for e-commerce businesses. Inara helps companies understand customer behavior before it happens.</p>
+                    <a href="#">Visit Inara &rarr;</a>
                 </div>
             </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600" alt="ConnectSphere Social Platform">
+                </div>
+                <div class="product-info">
+                    <span class="status" style="background-color: var(--primary-color); color: var(--dark-bg);">IN DEVELOPMENT</span>
+                    <h3>ConnectSphere</h3>
+                    <p>A decentralized social and professional networking platform that gives users full control over their data. Built on next-gen blockchain technology for ultimate privacy and security.</p>
+                    <a href="#">Learn More &rarr;</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 40px auto;">I am currently seeking internship opportunities and am open to freelance projects. Feel free to reach out!</p>
-            <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <h2>Have a groundbreaking idea?</h2>
+            <p>Whether you're a potential client, a future partner, or an investor, we're ready to listen.</p>
+            <a href="mailto:contact@sutonglabs.com" class="contact-button">Start the Conversation</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#" target="_blank" aria-label="LinkedIn">LI</a>
-                <a href="#" target="_blank" aria-label="GitHub">GH</a>
-                <a href="#" target="_blank" aria-label="Twitter">TW</a>
+            <a href="#" class="footer-logo">Sutong<span>Labs</span></a>
+            <ul class="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#showcase">Products</a></li>
+                <li><a href="https://www.your-research-blog.com" target="_blank">Research Blog</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+            <div class="social-icons">
+                 <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Twitter</a>
             </div>
-            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+            <p style="margin-top: 20px;">&copy; 2025-2052 Sutong Labs. All Rights Reserved.</p>
         </div>
     </footer>
 
